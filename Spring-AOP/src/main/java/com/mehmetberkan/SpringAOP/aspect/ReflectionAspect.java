@@ -14,7 +14,7 @@ import java.util.Date;
 @Component
 public class ReflectionAspect {
     @After("execution(* com.mehmetberkan.SpringAOP.service.MessageService.addMessage(..)) && args(message)")
-    public void addLogBeforeAddMessage(Message message) throws InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
+    public void useReflectionAfterAddMessage(Message message) throws InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
 
         if (message.getContent().isEmpty()) {
             System.out.println("Content is empty");
